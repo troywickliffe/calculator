@@ -6,8 +6,40 @@
     font-weight: normal;
 }
 
+.calculator {
+    background-color: #eeeeee;;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+.screen {
+    padding: 30px 20px;
+    border: 2px black solid;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+    grid-gap: 8px;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+button {
+    padding: 20px;
+    border: 2px black solid;
+    border-radius: 5px;
+    font-size: 20px;
 }
