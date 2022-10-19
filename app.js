@@ -1,4 +1,7 @@
 let shouldResetScreen = false
+let currentOperation = null
+let firstOperand = ''
+let secondOperand = ''
 
 //DOM Manipulation 
 const numberButtons = document.querySelectorAll('[data-number]')
@@ -34,7 +37,14 @@ function resetScreen() {
     shouldResetScreen = false
 }
 
-//Basic calculator functions
+function clear() {
+    currentScreen.textContent = '0'
+    firstOperand = ''
+    secondOperand = ''
+    currentOperation = null
+}
+
+//Function for basic math operators
 function add (a, b) {
     return a + b
 }
@@ -51,7 +61,7 @@ function divide (a, b) {
     return a / b
 }
 
-//Function that takes an operator and two numbers
+//Function that takes an operator, two numbers and calls basic math function
 function operate(operator, a, b) {
     a = Number(a)
     b = Number(b)
