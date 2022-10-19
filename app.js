@@ -23,7 +23,7 @@ operatorButtons.forEach((button) =>
     button.addEventListener('click', () => setOperation(button.textContent))
 )
 
-function appendNumber (number) {
+function appendNumber(number) {
     if (currentScreen.textContent === '0' || shouldResetScreen)
         resetScreen()
     currentScreen.textContent += number
@@ -49,4 +49,23 @@ function multiply (a, b) {
 
 function divide (a, b) {
     return a / b
+}
+
+//Function that takes an operator and two numbers
+function operate(operator, a, b) {
+    a = Number(a)
+    b = Number(b)
+    switch(operator) {
+        case '+':
+            return add(a, b)
+        case '-':
+            return subtract(a, b)
+        case 'x':
+            return multiply(a, b)
+        case '÷': 
+            if (b === 0) return null
+            else return divide(a, b)
+        default:
+            return null
+    }
 }
