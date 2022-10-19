@@ -44,6 +44,14 @@ function clear() {
     currentOperation = null
 }
 
+function appendPoint() {
+    if (shouldResetScreen) resetScreen()
+    if (currentScreen.textContent === '')
+        currentScreen.textContent === '0'
+    if (currentScreen.textContent.includes('.')) return
+    currentScreen.textContent += '.'
+}
+
 //Function for basic math operators
 function add (a, b) {
     return a + b
