@@ -52,6 +52,12 @@ function appendPoint() {
     currentScreen.textContent += '.'
 }
 
+function deleteNumber() {
+    currentScreen.textContent = currentScreen.textContent
+        .toString()
+        .slice(0, -1)
+}
+
 //Function for basic math operators
 function add (a, b) {
     return a + b
