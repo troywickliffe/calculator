@@ -68,14 +68,18 @@ function setOperation(operator) {
 function evaluate() {
     if (currentOperation === null || shouldResetScreen) return
     if (currentOperation === '÷' && currentScreen.textContent === '0') {
-        alert('You can/t divide by 0!')
+        alert('You can\'t divide by 0!')
         return
     }
-    secondOperand - currentScreen.textContent
+    secondOperand = currentScreen.textContent
     currentScreen.textContent = roundResult(
         operate(currentOperation, firstOperand, secondOperand)
     )
     currentOperation = null
+}
+
+function roundResult(number) {
+    return Math.round(number * 1000) / 1000
 }
 
 //Function for basic math operators
