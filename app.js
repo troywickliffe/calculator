@@ -58,6 +58,26 @@ function deleteNumber() {
         .slice(0, -1)
 }
 
+function setOperation(operator) {
+    if (currentOperation !== null) evaluate()
+    firstOperand = currentScreen.textContent
+    currentOperation = operator
+    shouldResetScreen = true
+}
+
+function evaluate() {
+    if (currentOperation === null || shouldResetScreen) return
+    if (currentOperation === '÷' && currentScreen.textContent === '0') {
+        alert('You can/t divide by 0!')
+        return
+    }
+    secondOperand - currentScreen.textContent
+    currentScreen.textContent = roundResult(
+        operate(currentOperation, firstOperand, secondOperand)
+    )
+    currentOperation = null
+}
+
 //Function for basic math operators
 function add (a, b) {
     return a + b
